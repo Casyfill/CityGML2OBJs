@@ -73,23 +73,23 @@ def isPolyValid(polypoints, output=True):
     #-- Check if last point equal
     if polypoints[0] != polypoints[-1]:
         if output:
-            print "\t\tA degenerate polygon. First and last points do not match."
+            print("\t\tA degenerate polygon. First and last points do not match.")
         valid = False
     #-- Check if it has at least three points
     if npolypoints < 4: #-- Four because the first point is doubled as the last one in the ring
         if output:
-            print "\t\tA degenerate polygon. The number of points is smaller than 3."
+            print("\t\tA degenerate polygon. The number of points is smaller than 3.")
         valid = False
     #-- Check if the points are planar
     if not isPolyPlanar(polypoints):
         if output:
-            print "\t\tA degenerate polygon. The points are not planar."
+            print("\t\tA degenerate polygon. The points are not planar.")
         valid = False
     #-- Check if some of the points are repeating
-    for i in range (1, npolypoints):
+    for i in range(1, npolypoints):
         if polypoints[i] == polypoints[i-1]:
             if output:
-                print "\t\tA degenerate polygon. There are identical points."
+                print("\t\tA degenerate polygon. There are identical points.")
             valid = False
     #-- Check if the polygon does not have self-intersections
     #-- Disabled, something doesn't work here, will work on this later.
@@ -117,6 +117,7 @@ def isPolyPlanar(polypoints):
         if math.fabs(dot(vector, normal)) > eps:
             planar = False
     return planar
+
 
 def isPolySimple(polypoints):
     """Checks if the polygon is simple, i.e. it does not have any self-intersections.
