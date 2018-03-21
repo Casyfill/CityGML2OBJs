@@ -78,6 +78,8 @@ Optional:
   
 The software has been developed on Mac OSX in Python 2.7, and has not been tested with other configurations. Hence, it is possible that some of the functions will not work on Windows and on Python 3.
 
+UPDATE: last version has been tested and (as Python 2.7 is sunsetting next year) written in python3
+
 CityGML requirements
 ---------------------
 
